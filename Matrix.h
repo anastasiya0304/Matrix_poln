@@ -8,39 +8,44 @@ using namespace std;
 template<class T>
 class Matrix;
 
-class Isclucheniya {
-	char* err;
+class Isclucheniya 
+{
+	string err;
 public:
-	Isclucheniya(char* _err) : err(_err) {}
-	virtual char* what() { return err; }
+	Isclucheniya(string _err) : err(_err)
+	{	}
+	string what() { return err; }
 };
 
-class Razmery : public Isclucheniya {
-	char* err;
+class Razmery : public Isclucheniya 
+{
 public:
 	Razmery() : Isclucheniya("ERROR: nevernye razmery!") {};
-	char* what() { return err; };
+
 };
 
-class WrongIndex : public Isclucheniya {
-	char* err;
+class WrongIndex : public Isclucheniya 
+{
+	
 public:
 	WrongIndex() : Isclucheniya("ERROR: wrong index!") {};
-	char* what() { return err; };
+	
 };
 
-class FileNotOpen : public Isclucheniya {
-	char* err;
+class FileNotOpen : public Isclucheniya 
+{
+
 public:
 	FileNotOpen() : Isclucheniya("ERROR: file not open!") {};
-	char* what() { return err; };
+	
 };
 
-class Samoprisvaivanie : public Isclucheniya {
-	char* err;
+class Samoprisvaivanie : public Isclucheniya 
+{
+	
 public:
 	Samoprisvaivanie() : Isclucheniya("ERROR: samoprisvaivanie!") {};
-	char* what() { return err; };
+	
 };
 
 {
